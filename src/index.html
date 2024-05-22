@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto+Condensed&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <h1 class="title">Weather App</h1>
+            <form method="get" class="form">
+
+                <div>
+                    <input type="text" placeholder="Enter city name" class = "input" />
+                    <div class="reset">
+                        <img src="./assets/reset.png" alt="Reset">
+                    </div>
+                </div>
+
+                <button class="btn">search</button>
+            </form>
+        </header>
+        <div class="weather-cart">
+            <div class="text">
+                <p class="city">City</p>
+                <p class="temperature">°C</p>
+                <p class="weather">Weather</p>
+            </div>
+            <div class="picture">
+                <img src="./assets/cloud.png" alt="Weather">
+            </div>
+        </div>
+        <footer>
+            <p class="footer"></p>
+        </footer>
+    </div>
+  
+
+    <script src="./main.js"></script>
+</body>
+</html>
