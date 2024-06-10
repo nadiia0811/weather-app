@@ -15,17 +15,20 @@ const images = [
                 "./assets/snow.png"
                ];
 
-const btn = document.querySelector(".reset");
-const input = document.querySelector(".input");
-btn.addEventListener("click", reset);
-
-
 function reset() {
    input.value = "";
    document.querySelector(".city").textContent = "City";
    tempBlock.textContent = "°C";
    weatherBlock.textContent = "Weather";
+   img.src="";
 }
+
+const btn = document.querySelector(".reset");
+const input = document.querySelector(".input");
+btn.addEventListener("click", reset);
+
+
+
 
 const showError = () => {
    tempBlock.textContent = "-";
