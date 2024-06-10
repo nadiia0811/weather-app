@@ -14,6 +14,7 @@ const images = [
                 "./assets/sun_rain.png",
                 "./assets/snow.png"
                ];
+
 const btn = document.querySelector(".reset");
 const input = document.querySelector(".input");
 btn.addEventListener("click", reset);
@@ -28,7 +29,7 @@ function reset() {
 
 const showError = () => {
    tempBlock.textContent = "-";
-   weatherBlock.textContent = "No such city";
+   weatherBlock.textContent = "No such city found";
 };
 
 const getPicture = (code, isDay) => {
@@ -70,21 +71,26 @@ const getPicture = (code, isDay) => {
 
 
 const getData =  async (url) => {
-   await fetch(url)
-         .then(res => res.json())
-         .then(data => {
-            if(data.error) {
-               showError();
-            }
-            isDay = +data.current.is_day;
-            code = +data.current.condition.code;
-            
-            getPicture(code, isDay);
-            temperature = +data.current.temp_c;
-            temp = temperature > 0 ? "+" : "-";
-            tempBlock.textContent = temp + " " + temperature + " °C";
-            weatherBlock.textContent = data.current.condition.text; 
-         })
+   try{
+      await fetch(url)
+      .then(res => res.json())
+      .then(data => {
+         if(data.error) {
+            showError();
+         }
+         isDay = +data.current.is_day;
+         code = +data.current.condition.code;
+         
+         getPicture(code, isDay);
+         temperature = +data.current.temp_c;
+         temp = temperature > 0 ? "+" : "-";
+         tempBlock.textContent = temp + " " + temperature + " °C";
+         weatherBlock.textContent = data.current.condition.text; 
+      })
+   } catch (err) {
+      showError();
+   }
+   
 };
 
 
