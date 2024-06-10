@@ -100,7 +100,7 @@ const getData =  async (url) => {
 const getWeather = (e) => {
     e.preventDefault();
     const cityName = input.value; 
-    const queryURL = `http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${cityName}`;
+    const queryURL = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${cityName}`;
 
     getData(queryURL);
     document.querySelector(".city").textContent = cityName[0].toUpperCase() + cityName.substring(1);
